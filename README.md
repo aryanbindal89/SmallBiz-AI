@@ -1,106 +1,27 @@
+<!-- ========================================================= -->
+<!--                  HEADER BANNER                            -->
+<!-- ========================================================= -->
+
+<p align="center">
+  <img
+    src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,50:312E81,100:6366F1&height=250&section=header&text=Small%20Business%20Compliance%20Assistant&fontSize=38&fontColor=FFFFFF&fontAlignY=38&desc=Understand%20%7C%20Apply%20%7C%20Organize%20%7C%20Track&descAlignY=60&descSize=18&animation=fadeIn"
+    width="100%"
+    alt="Small Business Compliance Assistant"
+  />
+</p>
+
 <div align="center">
-
-<svg width="100%" height="260" viewBox="0 0 1200 260" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0f172a"/>
-      <stop offset="50%" stop-color="#172554"/>
-      <stop offset="100%" stop-color="#312e81"/>
-    </linearGradient>
-
-    <linearGradient id="glowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38bdf8"/>
-      <stop offset="50%" stop-color="#818cf8"/>
-      <stop offset="100%" stop-color="#c084fc"/>
-    </linearGradient>
-
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="5" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <filter id="shadow">
-      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-opacity="0.35"/>
-    </filter>
-  </defs>
-
-  <rect width="1200" height="260" rx="24" fill="url(#heroGradient)"/>
-
-  <circle cx="1050" cy="55" r="90" fill="#6366f1" opacity="0.10"/>
-  <circle cx="1100" cy="190" r="120" fill="#38bdf8" opacity="0.08"/>
-  <circle cx="80" cy="210" r="100" fill="#8b5cf6" opacity="0.08"/>
-
-  <g opacity="0.35">
-    <path d="M0 220 Q300 150 600 220 T1200 180" fill="none" stroke="#60a5fa" stroke-width="1"/>
-    <path d="M0 235 Q300 165 600 235 T1200 195" fill="none" stroke="#a78bfa" stroke-width="1"/>
-  </g>
-
-  <g transform="translate(870 55)" filter="url(#shadow)">
-    <rect x="0" y="15" width="190" height="130" rx="16" fill="#111827" stroke="#6366f1" stroke-width="2"/>
-    <rect x="18" y="35" width="100" height="10" rx="5" fill="#38bdf8" opacity="0.8"/>
-    <rect x="18" y="58" width="145" height="8" rx="4" fill="#475569"/>
-    <rect x="18" y="78" width="120" height="8" rx="4" fill="#475569"/>
-    <rect x="18" y="98" width="90" height="8" rx="4" fill="#475569"/>
-
-    <circle cx="158" cy="108" r="20" fill="#312e81" stroke="#818cf8" stroke-width="2"/>
-    <path d="M149 108 L156 115 L169 99" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="round"/>
-
-    <animateTransform
-      attributeName="transform"
-      type="translate"
-      values="870 55;870 48;870 55"
-      dur="4s"
-      repeatCount="indefinite"/>
-  </g>
-
-  <g filter="url(#glow)">
-    <text x="80" y="92"
-          font-family="Arial, Helvetica, sans-serif"
-          font-size="44"
-          font-weight="700"
-          fill="white">
-      Small Business
-    </text>
-
-    <text x="80" y="142"
-          font-family="Arial, Helvetica, sans-serif"
-          font-size="44"
-          font-weight="700"
-          fill="url(#glowGradient)">
-      Compliance Assistant
-    </text>
-  </g>
-
-  <text x="82" y="180"
-        font-family="Arial, Helvetica, sans-serif"
-        font-size="18"
-        fill="#cbd5e1">
-    Understand • Apply • Organize • Track
-  </text>
-
-  <rect x="82" y="202" width="260" height="3" rx="2" fill="url(#glowGradient)">
-    <animate attributeName="width"
-             values="100;260;100"
-             dur="4s"
-             repeatCount="indefinite"/>
-  </rect>
-</svg>
-
-<br>
 
 # 🏢 Small Business Compliance Assistant
 
-### A modern workspace for understanding compliance, managing documents, and staying ahead of deadlines.
+### A modern workspace for small businesses to understand compliance, manage documents, and stay ahead of deadlines.
 
 <br>
 
-![Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Django](https://img.shields.io/badge/Django-6.1-092E20?style=for-the-badge&logo=django&logoColor=white)
-![Gemini](https://img.shields.io/badge/Gemini-AI-8E75B2?style=for-the-badge&logo=google&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+[![Python](https://img.shields.io/badge/Python-3.12%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Django](https://img.shields.io/badge/Django-6.1-092E20?style=for-the-badge&logo=django&logoColor=white)](https://www.djangoproject.com/)
+[![Gemini](https://img.shields.io/badge/Gemini-AI-8E75B2?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
+[![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
 
 <br>
 
@@ -111,146 +32,320 @@
 
 ---
 
-## 💡 What is it?
+# 💡 What is this?
 
-Running a small business can involve licenses, registrations, certificates, renewals, documents, government portals, and deadlines.
+Running a small business can involve licenses, registrations, certificates, documents, government portals, renewals, and deadlines.
 
 The **Small Business Compliance Assistant** brings these pieces together into one organized workspace.
 
-Instead of asking:
+Instead of searching across different websites and trying to remember different deadlines, a business owner can use one platform to:
 
-> **"What applies to my business?"**
+- 🏢 Create a business profile
+- 📋 Discover applicable compliance requirements
+- 📖 Understand requirements in simple language
+- 📄 Manage compliance-related documents
+- 🔗 Access official government portals
+- ⏰ Track document expiry dates
+- 🤖 Ask an AI assistant for explanations
 
-> **"What documents do I need?"**
-
-> **"Where do I apply?"**
-
-> **"When does this document expire?"**
-
-the application creates a structured workflow:
-
-```text
-       🏢 Business
-            │
-            ▼
-    📋 Find Requirements
-            │
-            ▼
-     📖 Understand Them
-            │
-            ▼
-   🏛️ Visit Official Portal
-            │
-            ▼
-      👤 Apply Yourself
-            │
-            ▼
-       📄 Store Document
-            │
-            ▼
-       ⏰ Track Expiry
-```
-
-> ⚠️ **Important:** The application does not submit government applications on behalf of users. Users complete applications themselves on the relevant official government portal.
+> ⚠️ **Important:** The application does not submit government applications on behalf of users. Users complete applications themselves through the relevant official government portal.
 
 ---
 
-# ✨ Features
+# ✨ Core Features
 
 <div align="center">
 
 | 🤖 AI Assistant | 🏢 Business Profile | 📋 Compliance Matching |
 |:---:|:---:|:---:|
-| Plain-language compliance explanations powered by Gemini | Business type, activity, location & employee information | Match businesses with curated requirements |
+| Gemini-powered explanations | Business information | Curated requirements |
 
 | 🔗 Official Portals | 🔐 Document Vault | ⏰ Deadline Tracking |
 |:---:|:---:|:---:|
-| Access verified government application portals | Owner-only document management | Expired & upcoming document alerts |
+| Verified external links | Private document management | Expiry monitoring |
 
 </div>
 
-### 🤖 AI Assistant
+---
 
-Ask compliance-related questions using natural language.
+## 🤖 AI Compliance Assistant
 
-- Gemini-powered responses
-- Plain-language explanations
-- Business context
-- Guidance toward official sources
-- Reminders to verify important legal information
+Users can ask questions about compliance in natural language.
 
-### 🏢 Business Profile
+The AI assistant can help with:
 
-Create a profile describing your business.
+- Understanding compliance concepts
+- Explaining complicated terminology
+- Simplifying requirement descriptions
+- Providing contextual explanations
+- Guiding users toward official sources
+
+The AI also reminds users to verify important legal or regulatory information using official sources.
+
+### AI Architecture
+
+```text
+                👤 USER
+                   │
+                   ▼
+          ┌─────────────────┐
+          │   Django App    │
+          └────────┬────────┘
+                   │
+                   ▼
+          ┌─────────────────┐
+          │  AI Assistant   │
+          └────────┬────────┘
+                   │
+                   ▼
+          ┌─────────────────┐
+          │  Google Gemini  │
+          └────────┬────────┘
+                   │
+                   ▼
+          💬 Plain-language
+             explanation
+```
+
+---
+
+# 🏢 Business Profile
+
+The application collects basic business information to understand which requirements may apply.
+
+A profile can include:
 
 - Business type
 - Business activity
 - Location
 - Employee count
-- Other matching information
+- Other relevant business information
 
-### 📋 Compliance Matching
-
-Requirements come from a **curated compliance catalog**, rather than being invented by the AI.
-
-Each requirement can contain:
-
-- Requirement summary
-- Applicable business type
-- Jurisdiction
-- Required documents
-- Application guidance
-- Official source
-- Official application portal
-
-### 🔗 Official Government Portals
-
-The application provides links to verified official portals.
-
-The user remains in control of the application process.
-
-### 🔐 Private Document Vault
-
-Documents can be linked to requirements and managed privately.
-
-- Owner-only access
-- Upload
-- Edit metadata
-- Download
-- Issue date
-- Expiry date
-
-### ⏰ Deadline Tracking
-
-The dashboard separates documents into useful groups:
-
-```text
-🔴 EXPIRED
-    ↓
-🟠 EXPIRING TODAY
-    ↓
-🟡 EXPIRING WITHIN 10 DAYS
-```
-
-Documents without an expiry date are excluded from deadline groups.
+This information is used to match the business with entries from the curated compliance catalog.
 
 ---
 
-# 🧭 How It Works
+# 📋 Compliance Matching
+
+One of the most important design decisions in this project is:
+
+> ## **AI explains. Curated data defines.**
+
+The AI should **not invent government requirements**.
+
+Instead, requirements are maintained through a reviewed compliance catalog.
+
+Each requirement can contain:
+
+- Requirement name
+- Description
+- Business type
+- Jurisdiction
+- Applicability
+- Required documents
+- Application steps
+- Official source
+- Official application portal
+
+### Workflow
 
 ```mermaid
 flowchart LR
 
-    A["🌐<br/>Public Homepage"]
-    B["🔐<br/>Sign Up / Login"]
-    C["🏢<br/>Business Profile"]
-    D["📋<br/>Matched Requirements"]
-    E["📖<br/>Requirement Details"]
-    F["🏛️<br/>Official Portal"]
-    G["👤<br/>User Applies"]
-    H["📄<br/>Upload Document"]
-    I["🔐<br/>Document Vault"]
-    J["⏰<br/>Expiry Tracking"]
+    A["🏢 Business Profile"]
+    B["📋 Curated Catalog"]
+    C["🔎 Requirement Matching"]
+    D["📖 Requirement Details"]
+    E["🏛️ Official Portal"]
+    F["👤 User Applies"]
+
+    A --> C
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+```
+
+---
+
+# 🔗 Official Government Portals
+
+The application provides links to relevant official portals.
+
+The user remains responsible for completing the actual government application.
+
+```text
+Application
+     │
+     ▼
+Requirement Details
+     │
+     ▼
+Official Government Portal
+     │
+     ▼
+User Completes Application
+```
+
+The application does **not** automatically submit government forms.
+
+---
+
+# 📄 Private Document Management
+
+Users can upload documents associated with compliance requirements.
+
+Each document may contain:
+
+- Document file
+- Requirement
+- Issue date
+- Expiry date
+- Additional metadata
+
+### Document ownership
+
+```text
+👤 User
+   │
+   ├── 📄 Document A
+   ├── 📄 Document B
+   └── 📄 Document C
+```
+
+Documents are intended to be accessible only to their owner.
+
+---
+
+# ⏰ Deadline Tracking
+
+The deadline system helps users identify documents that require attention.
+
+### Deadline groups
+
+```text
+🔴 EXPIRED
+   │
+   ▼
+🟠 EXPIRING TODAY
+   │
+   ▼
+🟡 EXPIRING WITHIN 10 DAYS
+```
+
+Documents without an expiry date are excluded from deadline-based groups.
+
+---
+
+# 🛡️ Security
+
+Security is a core part of the project because users may upload sensitive business documents.
+
+### Authentication
+
+- Django authentication
+- Login protection
+- Signup validation
+- Owner-based access control
+
+### Document Security
+
+- Owner-only document access
+- Protected downloads
+- File validation
+- File-size limits
+- Private storage strategy
+
+### Application Security
+
+- CSRF protection
+- Environment variables for secrets
+- Secure cookies in production
+- HTTPS in production
+- Restricted `ALLOWED_HOSTS`
+- Production database
+- Dependency updates
+- Logging and monitoring
+
+### Production Security Checklist
+
+```text
+[ ] DEBUG=False
+[ ] Strong SECRET_KEY
+[ ] HTTPS enabled
+[ ] Secure cookies
+[ ] Correct ALLOWED_HOSTS
+[ ] File validation
+[ ] Upload size limits
+[ ] Private document storage
+[ ] Production database
+[ ] Database backups
+[ ] Dependency updates
+[ ] Error logging
+[ ] Security monitoring
+```
+
+---
+
+# 🎨 UI / UX Direction
+
+The interface is designed around a modern SaaS-style experience.
+
+### 🌙 Dark Mode
+
+The default visual direction uses:
+
+- Deep dark backgrounds
+- Blue and purple accents
+- Soft gradients
+- Subtle borders
+- Glass-style surfaces
+- Smooth transitions
+
+### ☀️ Light Mode
+
+Users can switch to a cleaner light interface with:
+
+- Bright backgrounds
+- Soft surfaces
+- Strong text contrast
+- Blue/purple accent colors
+
+### 🧊 Visual Style
+
+The project can use subtle 3D-inspired elements such as:
+
+- Floating document cards
+- Layered dashboard panels
+- Depth-based cards
+- Soft shadows
+- Glassmorphism
+- Compliance illustrations
+- Floating icons
+- Smooth hover animations
+
+The goal is:
+
+> **Modern, clean, professional, and easy to use.**
+
+---
+
+# 🧭 Complete User Workflow
+
+```mermaid
+flowchart TD
+
+    A["🌐 Public Homepage"]
+    B["🔐 Sign Up / Login"]
+    C["🏢 Create Business Profile"]
+    D["📋 Find Applicable Requirements"]
+    E["📖 Read Requirement Details"]
+    F["🔗 Open Official Government Portal"]
+    G["👤 User Completes Application"]
+    H["📄 Upload Compliance Document"]
+    I["🔐 Manage Private Documents"]
+    J["⏰ Track Expiry"]
+    K["🤖 Ask AI Assistant"]
 
     A --> B
     B --> C
@@ -261,170 +356,13 @@ flowchart LR
     G --> H
     H --> I
     I --> J
+    D --> K
+    E --> K
 ```
 
 ---
 
-# 🧠 The Core Idea
-
-The most important architectural principle is:
-
-<div align="center">
-
-### **AI explains. Verified data defines.**
-
-</div>
-
-The AI should not decide what a government requirement is or invent an application URL.
-
-Instead:
-
-```mermaid
-flowchart TB
-
-    Catalog["📋 Curated Compliance Catalog"]
-
-    Catalog --> Match["🔎 Requirement Matching"]
-
-    Match --> User["👤 Business Owner"]
-
-    User --> AI["🤖 Gemini Assistant"]
-
-    AI --> Explanation["💬 Plain-language Explanation"]
-
-    Catalog --> Official["🏛️ Verified Official Sources"]
-
-    Official --> Portal["🔗 Government Portal"]
-```
-
-This separation helps keep factual compliance information independent from AI-generated explanations.
-
----
-
-# 🤖 Gemini AI
-
-The application uses the **Google Gen AI SDK** to communicate with Gemini.
-
-```mermaid
-sequenceDiagram
-
-    participant U as 👤 User
-    participant D as 🖥️ Django
-    participant A as 🤖 AI Assistant
-    participant G as ✨ Gemini
-
-    U->>D: Ask a question
-    D->>A: Validate request
-    A->>G: Send contextual prompt
-    G-->>A: Generate response
-    A-->>D: Process response
-    D-->>U: Display answer
-```
-
-### AI is intended to help with:
-
-- Understanding compliance concepts
-- Simplifying complicated language
-- Explaining requirements
-- Answering general questions
-- Guiding users toward official sources
-
-### AI is not a replacement for:
-
-- Government authorities
-- Official regulations
-- Legal professionals
-- Official application portals
-
----
-
-# 🛡️ Security
-
-Compliance documents may contain sensitive business information.
-
-Security is therefore treated as a core part of the application.
-
-### 🔐 Current protections
-
-```text
-Authentication
-      │
-      ▼
-Owner Verification
-      │
-      ▼
-Private Documents
-      │
-      ├── View
-      ├── Edit
-      └── Download
-```
-
-### Production security checklist
-
-- [ ] `DEBUG=False`
-- [ ] Strong production `SECRET_KEY`
-- [ ] HTTPS
-- [ ] Secure cookies
-- [ ] Restricted `ALLOWED_HOSTS`
-- [ ] File validation
-- [ ] File-size limits
-- [ ] Secure document storage
-- [ ] Production database
-- [ ] Secure backups
-- [ ] Dependency updates
-- [ ] Rate limiting
-- [ ] Logging & monitoring
-
----
-
-# 🧊 UI & Design
-
-The project is designed around a modern SaaS-style interface.
-
-### 🌙 Dark Mode
-
-Deep dark backgrounds with subtle blue/purple accents.
-
-### ☀️ Light Mode
-
-Clean surfaces with strong readability.
-
-### ✨ Motion
-
-Animations should improve usability rather than distract from it.
-
-Examples:
-
-```text
-Card Hover
-     ↓
-Small Lift
-     ↓
-Soft Shadow
-     ↓
-Smooth Transition
-```
-
-### 🧊 3D-inspired Elements
-
-The interface can use lightweight depth effects such as:
-
-- Floating document cards
-- Layered dashboard panels
-- 3D-style security illustrations
-- Floating compliance icons
-- Glassmorphism
-- Soft gradients
-- Depth-based cards
-
-The visual goal is:
-
-> **Modern and premium, not visually overloaded.**
-
----
-
-# 🏗️ Architecture
+# 🏗️ System Architecture
 
 ```mermaid
 flowchart TB
@@ -433,16 +371,17 @@ flowchart TB
 
     FRONTEND["🖥️ Django Templates<br/>HTML • CSS • JavaScript"]
 
-    AUTH["🔐 Accounts"]
-    BUSINESS["🏢 Businesses"]
-    AI["🤖 AI Assistant"]
-    COMPLIANCE["📋 Compliance"]
-    DOCS["📄 Documents"]
-    DEADLINES["⏰ Deadlines"]
+    AUTH["🔐 accounts"]
+    BUSINESS["🏢 businesses"]
+    AI["🤖 ai_assistant"]
+    COMPLIANCE["📋 compliance"]
+    DOCS["📄 documents"]
+    DEADLINES["⏰ deadlines"]
+    CORE["🌐 core"]
 
     GEMINI["✨ Google Gemini"]
-    DATABASE[("🗄️ Database")]
-    PORTALS["🏛️ Official Government Portals"]
+    DB[("🗄️ Database")]
+    PORTALS["🏛️ Official Government Websites"]
 
     USER --> FRONTEND
 
@@ -452,73 +391,71 @@ flowchart TB
     FRONTEND --> COMPLIANCE
     FRONTEND --> DOCS
     FRONTEND --> DEADLINES
+    FRONTEND --> CORE
 
     AI --> GEMINI
 
-    AUTH --> DATABASE
-    BUSINESS --> DATABASE
-    COMPLIANCE --> DATABASE
-    DOCS --> DATABASE
-    DEADLINES --> DATABASE
+    AUTH --> DB
+    BUSINESS --> DB
+    COMPLIANCE --> DB
+    DOCS --> DB
+    DEADLINES --> DB
 
     COMPLIANCE --> PORTALS
 ```
 
 ---
 
-# 🛠️ Tech Stack
-
-<div align="center">
+# 🛠️ Technology Stack
 
 | Layer | Technology |
 |---|---|
-| 🐍 Language | Python 3.12+ |
-| 🎯 Framework | Django 6.1 |
+| 🐍 Programming Language | Python 3.12+ |
+| 🎯 Backend Framework | Django 6.1 |
 | 🤖 AI | Google Gemini |
 | 🔌 AI SDK | Google Gen AI SDK |
-| 🗄️ Database | SQLite |
-| 🎨 Frontend | HTML + CSS + JavaScript |
+| 🗄️ Development Database | SQLite |
+| 🎨 Frontend | HTML, CSS, JavaScript |
 | 🔐 Authentication | Django Authentication |
-| 📁 Storage | Django File Handling |
-
-</div>
+| 📁 File Handling | Django File Storage |
+| 🧪 Testing | Django Test Framework |
 
 ---
 
 # 📁 Project Structure
 
 ```text
-📦 small-business-compliance-assistant
+📦 Small Business Compliance Assistant
 │
 ├── 🔐 accounts/
-│   └── Authentication & account creation
+│   └── Authentication and account management
 │
 ├── 🤖 ai_assistant/
-│   └── Business profile workflow & AI responses
+│   └── Business workflow and AI responses
 │
 ├── 🏢 businesses/
-│   └── User business profiles
+│   └── Business profiles
 │
 ├── 📋 compliance/
 │   └── Curated compliance requirements
 │
 ├── 📄 documents/
-│   └── Private uploads & document management
+│   └── Private document management
 │
 ├── ⏰ deadlines/
-│   └── Expiry tracking
+│   └── Expiry and deadline tracking
 │
 ├── 🌐 core/
-│   └── Homepage & dashboard
+│   └── Homepage and dashboard
 │
 ├── 🎨 templates/
 │   └── Django HTML templates
 │
 ├── ⚡ static/
-│   └── CSS & JavaScript
+│   └── CSS and JavaScript
 │
 ├── 📁 media/
-│   └── User-uploaded documents
+│   └── Uploaded documents
 │
 ├── ⚙️ manage.py
 ├── 📦 requirements.txt
@@ -529,79 +466,55 @@ flowchart TB
 
 ---
 
-# 🚀 Installation
+# 🚀 Quick Start
 
-## Windows PowerShell
-
-```powershell
-# Clone the repository
-git clone https://github.com/your-username/your-repository.git
-
-# Enter project
-cd your-repository
-
-# Create virtual environment
-py -3 -m venv .venv
-
-# Activate environment
-.\.venv\Scripts\Activate.ps1
-
-# Upgrade pip
-python -m pip install --upgrade pip
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Create environment file
-Copy-Item .env.example .env
-
-# Apply migrations
-python manage.py migrate
-
-# Create admin user
-python manage.py createsuperuser
-
-# Start development server
-python manage.py runserver
-```
-
-Open:
-
-```text
-http://127.0.0.1:8000/
-```
-
----
-
-## 🍎 macOS / Linux
+## 1. Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/your-repository.git
+```
 
+## 2. Enter the Project
+
+```bash
 cd your-repository
+```
 
+## 3. Create a Virtual Environment
+
+### Windows
+
+```powershell
+py -3 -m venv .venv
+```
+
+Activate it:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+### macOS / Linux
+
+```bash
 python3 -m venv .venv
-
 source .venv/bin/activate
-
-python -m pip install --upgrade pip
-
-pip install -r requirements.txt
-
-cp .env.example .env
-
-python manage.py migrate
-
-python manage.py createsuperuser
-
-python manage.py runserver
 ```
 
 ---
 
-# 🔑 Environment Variables
+## 4. Install Dependencies
 
-Create a `.env` file:
+```bash
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+---
+
+## 5. Configure Environment Variables
+
+Create a `.env` file.
 
 ```env
 SECRET_KEY=your-secret-key
@@ -615,121 +528,128 @@ GEMINI_API_KEY=your-gemini-api-key
 GEMINI_MODEL=gemini-2.5-flash
 ```
 
-### 🚨 Keep secrets private
+### 🔐 Never commit `.env`
 
 ```text
-.env                ❌ NEVER COMMIT
-API keys            ❌ NEVER COMMIT
-Production secrets  ❌ NEVER COMMIT
+.env
+```
 
-Source code         ✅
-Templates           ✅
-Models              ✅
-Views               ✅
-Requirements        ✅
+should remain inside `.gitignore`.
+
+---
+
+## 6. Run Migrations
+
+```bash
+python manage.py migrate
 ```
 
 ---
 
-# 📋 Compliance Catalog
+## 7. Create an Admin Account
 
-Compliance requirements are maintained through Django Admin.
+```bash
+python manage.py createsuperuser
+```
 
-Start the application:
+---
+
+## 8. Start the Development Server
 
 ```bash
 python manage.py runserver
 ```
 
-Then open:
+Open:
+
+```text
+http://127.0.0.1:8000/
+```
+
+---
+
+# 🔑 Gemini Configuration
+
+The project uses the **Google Gen AI SDK** to communicate with Gemini.
+
+The API key should be stored inside an environment variable:
+
+```env
+GEMINI_API_KEY=your-api-key
+```
+
+Never place an API key directly inside Python source code.
+
+Example:
+
+```python
+import os
+
+from google import genai
+
+api_key = os.getenv("GEMINI_API_KEY")
+
+client = genai.Client(
+    api_key=api_key
+)
+```
+
+The model can be configured through:
+
+```env
+GEMINI_MODEL=gemini-2.5-flash
+```
+
+---
+
+# 📋 Managing Compliance Requirements
+
+Requirements can be maintained through Django Admin.
+
+Start the development server:
+
+```bash
+python manage.py runserver
+```
+
+Open:
 
 ```text
 http://127.0.0.1:8000/admin/
 ```
 
-Add reviewed entries under:
+Requirements should be reviewed before being added to the catalog.
+
+A requirement may include:
 
 ```text
-Compliance Requirements
+Requirement
+├── Name
+├── Description
+├── Business Type
+├── Jurisdiction
+├── Applicability
+├── Required Documents
+├── Steps
+├── Official Source
+└── Official Application Portal
 ```
 
-A requirement can include:
+### Important principle
 
-- Business type
-- Jurisdiction
-- Summary
-- Required documents
-- Application guidance
-- Official source URL
-- Official portal URL
-
-### ⚠️ Verification matters
-
-Only add requirements and URLs that have been verified for the intended jurisdiction.
-
-If no verified requirement exists, the application should return no match rather than inventing one.
-
----
-
-# 📄 Documents
-
-Uploaded files are associated with their owner and requirement.
-
-```text
-👤 User
- │
- └── 📋 Requirement
-       │
-       └── 📄 Document
-             ├── File
-             ├── Issue Date
-             └── Expiry Date
-```
-
-Documents are stored under:
-
-```text
-media/private_documents/
-```
-
-Document viewing, editing, and downloading are restricted to the owner.
-
----
-
-# ⏰ Deadline System
-
-The Deadlines page provides a simple overview of document status.
-
-```text
-┌─────────────────────────────────────┐
-│ 🔴 EXPIRED                          │
-│ Documents whose expiry has passed   │
-└─────────────────────────────────────┘
-
-┌─────────────────────────────────────┐
-│ 🟠 EXPIRING TODAY                   │
-│ Documents expiring today            │
-└─────────────────────────────────────┘
-
-┌─────────────────────────────────────┐
-│ 🟡 NEXT 10 DAYS                     │
-│ Upcoming document expirations       │
-└─────────────────────────────────────┘
-```
-
-Documents without an expiry date are not included.
+If the application cannot identify a verified requirement, it should **not invent one**.
 
 ---
 
 # 🧪 Testing
 
-Run the Django test suite:
+Run Django tests:
 
 ```bash
 python manage.py test
 ```
 
-Check for migration requirements:
+Check migrations:
 
 ```bash
 python manage.py makemigrations --check --dry-run
@@ -741,96 +661,137 @@ Apply migrations:
 python manage.py migrate
 ```
 
----
+Run Django system checks:
 
-# 🗺️ Roadmap
-
-```text
-                    PROJECT
-                       │
-                       ▼
-              ┌─────────────────┐
-              │   FOUNDATION    │
-              └────────┬────────┘
-                       │
-              ✅ Django Setup
-              ✅ Authentication
-              ✅ Business Profile
-                       │
-                       ▼
-              ┌─────────────────┐
-              │    COMPLIANCE   │
-              └────────┬────────┘
-                       │
-              ✅ Catalog
-              ✅ Matching
-              ✅ Official Portals
-                       │
-                       ▼
-              ┌─────────────────┐
-              │    DOCUMENTS    │
-              └────────┬────────┘
-                       │
-              ✅ Private Uploads
-              ✅ Metadata
-              ✅ Expiry Tracking
-                       │
-                       ▼
-              ┌─────────────────┐
-              │       AI        │
-              └────────┬────────┘
-                       │
-              🚧 Gemini Integration
-              🚧 Context-aware AI
-              🚧 Better Explanations
-                       │
-                       ▼
-              ┌─────────────────┐
-              │    PRODUCTION   │
-              └────────┬────────┘
-                       │
-              🚧 Security Hardening
-              🚧 Cloud Storage
-              🚧 Production DB
-              🚧 Deployment
+```bash
+python manage.py check
 ```
 
 ---
 
-# 🔮 Future Possibilities
+# 🗺️ Development Roadmap
+
+```text
+                         🚀 PROJECT
+                            │
+                            ▼
+                 ┌────────────────────┐
+                 │     FOUNDATION     │
+                 └─────────┬──────────┘
+                           │
+                  Authentication
+                  Business Profile
+                  Dashboard
+                           │
+                           ▼
+                 ┌────────────────────┐
+                 │     COMPLIANCE     │
+                 └─────────┬──────────┘
+                           │
+                  Requirement Catalog
+                  Matching System
+                  Official Portals
+                           │
+                           ▼
+                 ┌────────────────────┐
+                 │     DOCUMENTS      │
+                 └─────────┬──────────┘
+                           │
+                  Private Uploads
+                  Metadata
+                  Access Control
+                           │
+                           ▼
+                 ┌────────────────────┐
+                 │      DEADLINES     │
+                 └─────────┬──────────┘
+                           │
+                  Expiry Tracking
+                  Upcoming Alerts
+                           │
+                           ▼
+                 ┌────────────────────┐
+                 │     AI ASSISTANT   │
+                 └─────────┬──────────┘
+                           │
+                  Gemini Integration
+                  Contextual Answers
+                  Plain-language Help
+                           │
+                           ▼
+                 ┌────────────────────┐
+                 │     PRODUCTION     │
+                 └────────────────────┘
+                           │
+                  Security Hardening
+                  Production Database
+                  Cloud Storage
+                  Deployment
+```
+
+---
+
+# 🔮 Future Ideas
+
+Possible future improvements include:
 
 - 🔔 Email deadline reminders
 - 📅 Calendar integration
 - 📱 Progressive Web App
 - 📊 Compliance analytics
-- 📤 Exportable compliance reports
+- 📤 Compliance report generation
 - 👥 Multi-user business accounts
 - ☁️ Cloud document storage
 - 🗺️ Multi-jurisdiction support
 - 🔎 Advanced compliance search
-- 🔐 Stronger production encryption
+- 🔐 Stronger production security
 - 🧠 More contextual AI assistance
+- 📈 Business compliance dashboard
 
 ---
 
 # ⚠️ Disclaimer
 
-This project provides **informational compliance assistance** and is not legal advice.
+The **Small Business Compliance Assistant** provides informational assistance and is not a substitute for professional legal advice.
 
-Government requirements can change and applicability may depend on factors such as:
+Government requirements may vary depending on:
 
 - Business type
 - Location
 - Industry
 - Business activity
-- Employee count
+- Number of employees
 - Revenue
 - Registration status
 - Current regulations
 
-Users should verify important information with the relevant government authority.
+Requirements and government procedures can change over time.
 
-**The application does not submit government applications on behalf of users.**
+Users should verify important information through the relevant official government authority or portal.
+
+**This application does not submit government applications on behalf of users.**
+
+---
+
+# 👨‍💻 Project Philosophy
+
+This project follows three simple principles:
+
+```text
+┌──────────────────────────────────────────┐
+│                                          │
+│        🤖 AI should explain              │
+│                                          │
+│        📋 Data should be verified        │
+│                                          │
+│        👤 Users should stay in control   │
+│                                          │
+└──────────────────────────────────────────┘
+```
+
+The goal is not to replace government websites or legal professionals.
+
+The goal is to make the journey toward understanding and managing compliance simpler.
 
 ---
 
@@ -838,87 +799,20 @@ Users should verify important information with the relevant government authority
 
 <div align="center">
 
-<svg width="100%" height="180" viewBox="0 0 1200 180" xmlns="http://www.w3.org/2000/svg">
+### 🚀 Keep Building. Keep Learning. Keep Moving Forward.
 
-  <defs>
-
-    <linearGradient id="footerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#020617"/>
-      <stop offset="50%" stop-color="#172554"/>
-      <stop offset="100%" stop-color="#312e81"/>
-    </linearGradient>
-
-    <linearGradient id="footerGlow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#22d3ee"/>
-      <stop offset="50%" stop-color="#818cf8"/>
-      <stop offset="100%" stop-color="#c084fc"/>
-    </linearGradient>
-
-    <filter id="footerBlur">
-      <feGaussianBlur stdDeviation="6"/>
-    </filter>
-
-  </defs>
-
-  <rect width="1200" height="180" rx="24" fill="url(#footerGradient)"/>
-
-  <circle cx="150" cy="40" r="55" fill="#6366f1" opacity="0.12">
-    <animate attributeName="cy"
-             values="40;55;40"
-             dur="5s"
-             repeatCount="indefinite"/>
-  </circle>
-
-  <circle cx="1040" cy="130" r="75" fill="#22d3ee" opacity="0.08">
-    <animate attributeName="cy"
-             values="130;115;130"
-             dur="6s"
-             repeatCount="indefinite"/>
-  </circle>
-
-  <path d="M100 145 Q300 85 500 140 T900 125 T1150 90"
-        fill="none"
-        stroke="url(#footerGlow)"
-        stroke-width="2"
-        opacity="0.55"/>
-
-  <text x="600"
-        y="70"
-        text-anchor="middle"
-        font-family="Arial, Helvetica, sans-serif"
-        font-size="26"
-        font-weight="700"
-        fill="white">
-    Keep Building. Keep Learning. Keep Moving Forward.
-  </text>
-
-  <text x="600"
-        y="108"
-        text-anchor="middle"
-        font-family="Arial, Helvetica, sans-serif"
-        font-size="17"
-        fill="#cbd5e1">
-    Every great product starts with one small step.
-  </text>
-
-  <rect x="460"
-        y="130"
-        width="280"
-        height="3"
-        rx="2"
-        fill="url(#footerGlow)">
-    <animate attributeName="width"
-             values="180;280;180"
-             dur="4s"
-             repeatCount="indefinite"/>
-  </rect>
-
-</svg>
+**Every great product starts with one small step.**
 
 <br>
 
-### ⭐ If you like this repository, a star would mean a lot to me.
+⭐ **If you like this repository, a star would mean a lot to me.**
 
-**Thank you for checking out my project! ❤️**
+<br>
+
+<img
+  src="https://capsule-render.vercel.app/api?type=waving&color=0:6366F1,50:312E81,100:0F172A&height=140&section=footer&animation=fadeIn"
+  width="100%"
+  alt="Footer"
+/>
 
 </div>
