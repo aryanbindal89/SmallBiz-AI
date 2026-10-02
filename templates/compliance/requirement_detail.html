@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ requirement.name }} | Compliance Requirements{% endblock %}
+
+{% block content %}
+<section class="container section workspace-page">
+    <div class="workspace-heading">
+        <div>
+            <p class="eyebrow">Compliance requirement</p>
+            <h1>{{ requirement.name }}</h1>
+            <p class="page-intro">{{ requirement.summary }}</p>
+        </div>
+        <a class="btn btn-secondary" href="{% url 'ai_assistant' %}">Back to AI assistant</a>
+    </div>
+
+    <article class="info-card requirement-detail">
+        <section>
+            <h2>Why it may be required</h2>
+            {{ requirement.why_required|linebreaks }}
+        </section>
+        <section>
+            <h2>Documents you may need</h2>
+            {{ requirement.documents_needed|linebreaks }}
+        </section>
+        <section>
+            <h2>How to apply</h2>
+            {{ requirement.application_steps|linebreaks }}
+        </section>
+        <section class="official-links">
+            <h2>Official sources</h2>
+            {% if requirement.official_source_url %}
+                <p><a href="{{ requirement.official_source_url }}" target="_blank" rel="noopener noreferrer">Open government source</a></p>
+            {% else %}
+                <p>Official source link has not been added yet.</p>
+            {% endif %}
+            {% if requirement.official_portal_url %}
+                <a class="btn btn-primary" href="{{ requirement.official_portal_url }}" target="_blank" rel="noopener noreferrer">Open official application portal</a>
+            {% else %}
+                <p>Official application portal link has not been added yet.</p>
+            {% endif %}
+            <p class="field-help">You complete and submit the application on the government website. This assistant does not submit it for you.</p>
+        </section>
+
+        {% if application.status == 'document_uploaded' %}
+            <div class="notice">A document has been uploaded for this requirement.</div>
+            <a class="btn btn-secondary" href="{% url 'documents:upload_for_requirement' requirement.id %}">Upload another document</a>
+        {% else %}
+            <form method="post">
+                {% csrf_token %}
+                <button class="btn btn-primary" type="submit">I Applied Successfully</button>
+            </form>
+        {% endif %}
+    </article>
+</section>
+{% endblock %}

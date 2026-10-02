@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}Expiring Documents | Deadlines{% endblock %}
+
+{% block content %}
+<section class="container section workspace-page">
+    <div class="workspace-heading">
+        <div>
+            <p class="eyebrow">Document deadlines</p>
+            <h1>Keep documents current.</h1>
+            <p class="page-intro">Expired documents and documents expiring within 10 days are listed here. Documents without an expiry date are excluded.</p>
+        </div>
+        <a class="btn btn-secondary" href="{% url 'ai_assistant' %}">Back to AI assistant</a>
+    </div>
+
+    <section class="deadline-list-section" aria-labelledby="expired-documents-heading">
+        <div class="panel-top">
+            <div>
+                <p class="eyebrow">Action needed</p>
+                <h2 id="expired-documents-heading">Expired or expiring today</h2>
+            </div>
+            <span class="status-pill">{{ action_documents|length }} document{{ action_documents|length|pluralize }}</span>
+        </div>
+        {% if action_documents %}
+            <ul class="task-list deadline-list">
+                {% for document in action_documents %}
+                <li>
+                    <div>
+                        <strong>{{ document.title }}</strong>
+                        {% if document.expiry_date < today %}
+                            <span class="mini-status overdue">Expired {{ document.expiry_date|date:'M j, Y' }}</span>
+                        {% else %}
+                            <span class="mini-status soon">Expires today</span>
+                        {% endif %}
+                        <span>{% if document.requirement %}{{ document.requirement.name }}{% else %}{{ document.get_category_display }}{% endif %}</span>
+                    </div>
+                    <div class="deadline-actions">
+                        <a class="mini-action" href="{% url 'documents:edit' document.id %}">Update dates</a>
+                        <a class="mini-action" href="{% url 'documents:download' document.id %}">Download</a>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <div class="ai-empty-state compact-empty">
+                <p>No expired documents or documents expiring today.</p>
+            </div>
+        {% endif %}
+    </section>
+
+    <section class="deadline-list-section" aria-labelledby="expiring-documents-heading">
+        <div class="panel-top">
+            <div>
+                <p class="eyebrow">Document expiry</p>
+                <h2 id="expiring-documents-heading">Expiring within 10 days</h2>
+            </div>
+            <span class="status-pill">{{ expiring_documents|length }} document{{ expiring_documents|length|pluralize }}</span>
+        </div>
+        {% if expiring_documents %}
+            <ul class="task-list deadline-list">
+                {% for document in expiring_documents %}
+                <li>
+                    <div>
+                        <strong>{{ document.title }}</strong>
+                        <span class="mini-status soon">Expires {{ document.expiry_date|date:'M j, Y' }}</span>
+                        <span>{% if document.requirement %}{{ document.requirement.name }}{% else %}{{ document.get_category_display }}{% endif %}</span>
+                    </div>
+                    <div class="deadline-actions">
+                        <a class="mini-action" href="{% url 'documents:edit' document.id %}">Update dates</a>
+                        <a class="mini-action" href="{% url 'documents:download' document.id %}">Download</a>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <div class="ai-empty-state compact-empty">
+                <p>No documents expiring in the next 10 days.</p>
+                <small>Documents appear here when their expiry date enters the 10-day window.</small>
+            </div>
+        {% endif %}
+    </section>
+
+</section>
+{% endblock %}

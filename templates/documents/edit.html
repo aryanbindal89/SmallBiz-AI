@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit {{ document.title }} | Documents{% endblock %}
+
+{% block content %}
+<section class="container section workspace-page">
+    <div class="workspace-heading">
+        <div>
+            <p class="eyebrow">Document details</p>
+            <h1>Edit {{ document.title }}</h1>
+            <p class="page-intro">Update the issue date or expiry date. Leave expiry blank if this document does not expire.</p>
+        </div>
+        <a class="btn btn-secondary" href="{% url 'documents:list' %}">Back to documents</a>
+    </div>
+
+    <section class="info-card upload-panel" aria-labelledby="edit-document-heading">
+        <h2 id="edit-document-heading">Document information</h2>
+        <form method="post" class="workspace-form">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="field-block">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% for error in field.errors %}<small class="field-error">{{ error }}</small>{% endfor %}
+                </div>
+            {% endfor %}
+            <button class="btn btn-primary" type="submit">Save changes</button>
+        </form>
+    </section>
+</section>
+{% endblock %}

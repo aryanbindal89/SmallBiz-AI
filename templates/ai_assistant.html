@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+
+{% block title %}AI Assistant | Small Business Compliance Assistant{% endblock %}
+
+{% block content %}
+<section class="container section ai-layout">
+    <div class="ai-header">
+        <div>
+            <p class="eyebrow">AI assistant</p>
+            <h2>Ask about your compliance questions.</h2>
+        </div>
+        <div class="header-pills">
+            <span class="pill">Private workspace</span>
+            <span class="pill">Official-source first</span>
+            <span class="pill">Plain English</span>
+            <a class="btn btn-secondary" href="{% url 'documents:list' %}">My documents</a>
+        </div>
+    </div>
+
+    <section class="info-card form-panel" aria-labelledby="business-profile-heading">
+        <div class="panel-top">
+            <div>
+                <p class="eyebrow">Business information</p>
+                <h3 id="business-profile-heading">Tell us about your business</h3>
+            </div>
+            {% if profile %}<span class="status-pill success">Saved</span>{% endif %}
+        </div>
+        <p class="page-intro">We use your business type and location to match reviewed compliance requirements.</p>
+        <form method="post" class="workspace-form">
+            {% csrf_token %}
+            <input type="hidden" name="action" value="save_profile" />
+            {% for field in profile_form %}
+                <div class="field-block">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% for error in field.errors %}<small class="field-error">{{ error }}</small>{% endfor %}
+                </div>
+            {% endfor %}
+            <button class="btn btn-secondary" type="submit">Save business details</button>
+        </form>
+    </section>
+
+    {% if profile %}
+    <section class="requirement-results" aria-labelledby="requirements-heading">
+        <div class="panel-top">
+            <div>
+                <p class="eyebrow">Based on your business profile</p>
+                <h3 id="requirements-heading">Possible compliance requirements</h3>
+            </div>
+            <span class="status-pill">{{ requirement_records|length }} matched</span>
+        </div>
+        {% if requirement_records %}
+            <div class="card-grid three-up">
+                {% for record in requirement_records %}
+                    <article class="info-card requirement-card">
+                        <h3>{{ record.requirement.name }}</h3>
+                        <p>{{ record.requirement.summary }}</p>
+                        {% if record.application %}<span class="mini-status">{{ record.application.get_status_display }}</span>{% endif %}
+                        <a class="btn btn-secondary" href="{% url 'compliance:requirement_detail' record.requirement.id %}">View details</a>
+                    </article>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="ai-empty-state compact-empty">
+                <p>No reviewed requirements match this business profile yet.</p>
+                <small>Requirement matches are based on curated business and location details.</small>
+            </div>
+        {% endif %}
+    </section>
+    {% endif %}
+
+    {% if profile %}
+    <div class="ai-grid">
+        <div class="info-card form-panel">
+            <div class="panel-top">
+                <h3>New question</h3>
+                <span class="status-pill success">Secure</span>
+            </div>
+
+            <div class="quick-prompts">
+                <button class="chip-button" type="button" data-question="What licences or registrations does a small retail shop need in Bengaluru?">Retail licence checklist</button>
+                <button class="chip-button" type="button" data-question="What documents should I keep ready for compliance reviews?">Required documents</button>
+                <button class="chip-button" type="button" data-question="What deadlines should I track for my small business this quarter?">Upcoming deadlines</button>
+            </div>
+
+            <form method="post" class="assistant-form">
+                {% csrf_token %}
+                <input type="hidden" name="action" value="ask_ai" />
+                <div class="field-block">
+                    <label for="question">Your question</label>
+                    <textarea id="question" name="question" rows="6" placeholder="Example: What documents do I need for a retail shop licence?">{{ question }}</textarea>
+                </div>
+
+                <div class="field-block">
+                    <label for="business_context">Business context</label>
+                    <textarea id="business_context" name="business_context" rows="4" placeholder="Example: small retail shop, Bengaluru, 4 employees">{{ business_context }}</textarea>
+                </div>
+
+                <button class="btn btn-primary full-width" type="submit">Ask AI</button>
+            </form>
+        </div>
+
+        <div class="info-card answer-panel">
+            <div class="panel-top">
+                <h3>Response</h3>
+                {% if result %}<span class="status-pill success">Live</span>{% else %}<span class="status-pill pending">Waiting</span>{% endif %}
+            </div>
+
+            {% if error %}
+                <div class="alert error">{{ error }}</div>
+            {% elif result %}
+                <div class="answer-intro">
+                    <span class="answer-kicker">Plain-language guide</span>
+                    <p>Here is the answer, separated into the main point, next steps, and terms to know.</p>
+                </div>
+                {% if response_keywords %}
+                    <section class="answer-keywords" aria-label="Key terms">
+                        <h4>Key terms</h4>
+                        <div class="keyword-list">
+                            {% for keyword in response_keywords %}<span class="keyword-chip">{{ keyword }}</span>{% endfor %}
+                        </div>
+                    </section>
+                {% endif %}
+                <div class="response-sections">
+                    {% for section in response_sections %}
+                        <section class="response-section">
+                            <h4>{{ section.title }}</h4>
+                            {% for block in section.blocks %}
+                                {% if block.type == 'paragraph' %}
+                                    <p>{{ block.text }}</p>
+                                {% else %}
+                                    <ul class="response-list">
+                                        {% for item in block.items %}<li>{{ item }}</li>{% endfor %}
+                                    </ul>
+                                {% endif %}
+                            {% endfor %}
+                        </section>
+                    {% endfor %}
+                </div>
+                <section class="response-section" aria-labelledby="response-licences-heading">
+                    <h4 id="response-licences-heading">Licences, registrations, and permits</h4>
+                    {% if requirement_records %}
+                        <ul class="response-list">
+                            {% for record in requirement_records %}
+                                <li>
+                                    <a href="{% url 'compliance:requirement_detail' record.requirement.id %}">{{ record.requirement.name }}</a>
+                                    <span>{{ record.requirement.summary }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No reviewed licence or registration records match this profile yet.</p>
+                    {% endif %}
+                </section>
+                <section class="response-section" aria-labelledby="response-portals-heading">
+                    <h4 id="response-portals-heading">Official application platforms</h4>
+                    {% if portal_records %}
+                        <ul class="response-list">
+                            {% for record in portal_records %}
+                                <li>
+                                    <a href="{{ record.requirement.official_portal_url }}" target="_blank" rel="noopener noreferrer">{{ record.requirement.name }} application portal</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No verified application portal is available for the matched requirements yet.</p>
+                    {% endif %}
+                    <small>Applications are completed by you on the official government website.</small>
+                </section>
+            {% else %}
+                <div class="ai-empty-state">
+                    <p>Your answer will appear here.</p>
+                    <small>Use the examples above or ask a specific compliance question.</small>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+</section>
+
+<script>
+    document.querySelectorAll('.chip-button').forEach((button) => {
+        button.addEventListener('click', () => {
+            const questionInput = document.getElementById('question');
+            if (questionInput) {
+                questionInput.value = button.dataset.question || '';
+                questionInput.focus();
+            }
+        });
+    });
+</script>
+{% endblock %}

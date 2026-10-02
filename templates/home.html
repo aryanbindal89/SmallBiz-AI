@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+
+{% block title %}Home | Small Business Compliance Assistant{% endblock %}
+
+{% block content %}
+<section class="hero container" id="product">
+    <div class="hero-copy">
+        <p class="eyebrow">Small business compliance made simple</p>
+        <h1>Stay on top of your business compliance.</h1>
+        <p class="lead">
+            Understand what applies to your business, organize your documents, and keep track of important deadlines from one simple dashboard.
+        </p>
+        <div class="hero-actions">
+            <a class="btn btn-primary" href="{% url 'signup' %}">Sign Up</a>
+            <a class="btn btn-secondary" href="#how-it-works">See How It Works</a>
+        </div>
+        <ul class="trust-list" aria-label="Key product benefits">
+            <li>Applicable requirements</li>
+            <li>Document tracking</li>
+            <li>Deadline reminders</li>
+        </ul>
+    </div>
+
+    <div class="preview-card" aria-label="Compliance dashboard preview">
+        <div class="preview-header">
+            <div>
+                <p class="panel-label">Compliance Overview</p>
+                <h2>Business snapshot</h2>
+            </div>
+            <span class="status-pill success">Updated today</span>
+        </div>
+
+        <div class="summary-grid">
+            <div class="mini-stat">
+                <strong>8</strong>
+                <span>Requirements</span>
+            </div>
+            <div class="mini-stat">
+                <strong>3</strong>
+                <span>Upcoming</span>
+            </div>
+            <div class="mini-stat">
+                <strong>5</strong>
+                <span>Complete</span>
+            </div>
+        </div>
+
+        <div class="requirement-list">
+            <div class="requirement-item complete">
+                <div>
+                    <span class="title">Business Registration</span>
+                    <span class="meta">Verified</span>
+                </div>
+                <span class="status-tag success">✓ Complete</span>
+            </div>
+            <div class="requirement-item warning">
+                <div>
+                    <span class="title">Licence Renewal</span>
+                    <span class="meta">Due in 12 days</span>
+                </div>
+                <span class="status-tag warning">⚠ Due Soon</span>
+            </div>
+            <div class="requirement-item pending">
+                <div>
+                    <span class="title">Tax Requirement</span>
+                    <span class="meta">Awaiting review</span>
+                </div>
+                <span class="status-tag pending">• Pending</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container section" id="how-it-works">
+    <div class="section-heading">
+        <p class="eyebrow">How it works</p>
+        <h2>From confusion to a clear action plan.</h2>
+    </div>
+
+    <div class="card-grid three-up">
+        <article class="info-card">
+            <span class="step-badge">01</span>
+            <h3>Create your business profile</h3>
+            <p>Tell the system what kind of business you run, your location, and your basic compliance context.</p>
+        </article>
+        <article class="info-card">
+            <span class="step-badge">02</span>
+            <h3>See applicable requirements</h3>
+            <p>Review the rules, obligations, and official sources relevant to your business type and area.</p>
+        </article>
+        <article class="info-card">
+            <span class="step-badge">03</span>
+            <h3>Track documents and deadlines</h3>
+            <p>Upload files, monitor due dates, and keep your next action visible without digging through paperwork.</p>
+        </article>
+    </div>
+</section>
+
+<section class="container section" id="features">
+    <div class="section-heading">
+        <p class="eyebrow">Core features</p>
+        <h2>Built for practical, everyday compliance.</h2>
+    </div>
+
+    <div class="card-grid four-up">
+        <article class="info-card">
+            <h3>Compliance dashboard</h3>
+            <p>View the full picture of your business requirements, pending work, upcoming deadlines, and status summaries.</p>
+        </article>
+        <article class="info-card">
+            <h3>Document organizer</h3>
+            <p>Upload, review, and manage PDFs and images with a structure that keeps important files easy to find.</p>
+        </article>
+        <article class="info-card">
+            <h3>Official-source guidance</h3>
+            <p>Connect each requirement to a trusted, traceable source so users know where the information came from.</p>
+        </article>
+        <article class="info-card">
+            <h3>AI explanation layer</h3>
+            <p>Ask plain-language questions about compliance steps while keeping legal authority anchored to official sources.</p>
+        </article>
+    </div>
+</section>
+
+<section class="container section trust-section" id="about">
+    <div class="section-heading narrow">
+        <p class="eyebrow">Trust and clarity</p>
+        <h2>Reliable information, not legal guesswork.</h2>
+    </div>
+
+    <div class="trust-panel">
+        <div class="trust-copy">
+            <p>
+                The product is designed to explain compliance requirements in plain language and give small business owners a clear action list.
+                It does not replace official government guidance or legal advice.
+            </p>
+            <ul class="bullet-list">
+                <li>Official-source references for key requirements</li>
+                <li>Action-oriented guidance rather than general legal commentary</li>
+                <li>Simple status tracking to reduce missed deadlines</li>
+            </ul>
+        </div>
+        <div class="source-box" aria-label="Official source examples">
+            <span class="source-label">Example sources</span>
+            <div class="source-tags">
+                <span>GST</span>
+                <span>Municipal licenses</span>
+                <span>Business registration</span>
+                <span>Labour notices</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-strip">
+    <div class="container cta-inner">
+        <div>
+            <p class="eyebrow">Ready to simplify compliance?</p>
+            <h2>Build a clear compliance workflow for your business.</h2>
+        </div>
+        <a class="btn btn-primary" href="{% url 'signup' %}">Sign Up</a>
+    </div>
+</section>
+{% endblock %}

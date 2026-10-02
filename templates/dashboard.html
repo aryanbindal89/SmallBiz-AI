@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard | Small Business Compliance Assistant{% endblock %}
+
+{% block content %}
+<section class="container section dashboard-shell">
+    <div class="dashboard-header">
+        <div>
+            <p class="eyebrow">Dashboard</p>
+            <h2>Welcome back.</h2>
+        </div>
+        <div class="dashboard-actions">
+            <a class="btn btn-secondary" href="{% url 'documents:list' %}">Documents</a>
+            <a class="btn btn-secondary" href="{% url 'deadlines:list' %}">Deadlines</a>
+            <a class="btn btn-primary" href="{% url 'ai_assistant' %}">Open AI assistant</a>
+        </div>
+    </div>
+
+    <div class="stats-grid">
+        {% for stat in stats %}
+        <div class="info-card stat-card">
+            <span class="muted-label">{{ stat.label }}</span>
+            <strong>{{ stat.value }}</strong>
+            <small>{{ stat.note }}</small>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="dashboard-grid">
+        <div class="info-card">
+            <div class="panel-top">
+                <div>
+                    <p class="eyebrow">In-app notifications</p>
+                    <h3>Deadline alerts</h3>
+                </div>
+                <a class="mini-action" href="{% url 'deadlines:list' %}">Manage</a>
+            </div>
+            {% if alerts %}
+                <ul class="notification-list">
+                    {% for deadline in alerts %}
+                    <li class="notification-item {{ deadline.alert_state }}">
+                        <span class="notification-marker" aria-hidden="true"></span>
+                        <div>
+                            <strong>{{ deadline.title }}</strong>
+                            <span>{{ deadline.alert_label }} - {{ deadline.due_date|date:'M j, Y' }}</span>
+                            {% if deadline.details %}<small>{{ deadline.details }}</small>{% endif %}
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <div class="ai-empty-state compact-empty">
+                    <p>No upcoming alerts.</p>
+                    <small>Add a deadline to get reminders here.</small>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="info-card">
+            <div class="panel-top">
+                <h3>Recent documents</h3>
+                <a class="mini-action" href="{% url 'documents:list' %}">Upload</a>
+            </div>
+            {% if documents %}
+                <ul class="doc-list">
+                    {% for document in documents %}
+                    <li>
+                        <div>
+                            <strong>{{ document.title }}</strong>
+                            <span>{{ document.get_category_display }} - {{ document.uploaded_at|date:'M j, Y' }}</span>
+                        </div>
+                        <a class="mini-action" href="{% url 'documents:download' document.id %}">Download</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <div class="ai-empty-state compact-empty">
+                    <p>No documents uploaded yet.</p>
+                    <small>Keep your business files together in your private vault.</small>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}
