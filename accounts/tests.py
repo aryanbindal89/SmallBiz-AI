@@ -38,6 +38,29 @@ class AccountFlowTests(TestCase):
 		self.assertEqual(user.username, 'sample-owner')
 		self.assertEqual(int(self.client.session['_auth_user_id']), user.pk)
 
+	def test_signup_logout_and_login_with_email(self):
+		password = 'N0t-a-common-password!'
+		signup_response = self.client.post('/accounts/signup/', {
+			'username': 'sample-owner',
+			'email': 'owner@example.com',
+			'password1': password,
+			'password2': password,
+		})
+		self.assertRedirects(signup_response, '/ai/')
+
+		user = get_user_model().objects.get(email='owner@example.com')
+		self.assertTrue(user.check_password(password))
+		logout_response = self.client.post('/accounts/logout/')
+		self.assertRedirects(logout_response, '/')
+
+		login_response = self.client.post('/accounts/login/', {
+			'username': user.email,
+			'password': password,
+		})
+
+		self.assertRedirects(login_response, '/ai/')
+		self.assertEqual(int(self.client.session['_auth_user_id']), user.pk)
+
 	def test_login_uses_email_instead_of_username(self):
 		user = get_user_model().objects.create_user(
 			username='sample-owner',
