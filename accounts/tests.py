@@ -1,8 +1,58 @@
+import os
+from unittest.mock import patch
+
+from django.core.management import call_command, CommandError
 from django.test import TestCase
 from django.contrib.auth import get_user_model
 
 
 class AccountFlowTests(TestCase):
+	def test_bootstrap_admin_creates_superuser_from_environment(self):
+		password = 'Strong-unique-admin-password-8492!'
+		with patch.dict(os.environ, {
+			'ADMIN_USERNAME': 'aryan',
+			'ADMIN_EMAIL': 'aryan@example.com',
+			'ADMIN_PASSWORD': password,
+		}):
+			call_command('bootstrap_admin')
+
+		admin = get_user_model().objects.get(username='aryan')
+		self.assertTrue(admin.is_staff)
+		self.assertTrue(admin.is_superuser)
+		self.assertTrue(admin.check_password(password))
+
+	def test_bootstrap_admin_does_not_change_existing_superuser(self):
+		User = get_user_model()
+		admin = User.objects.create_superuser(
+			username='aryan',
+			email='aryan@example.com',
+			password='Original-strong-password-8492!',
+		)
+		with patch.dict(os.environ, {
+			'ADMIN_USERNAME': 'aryan',
+			'ADMIN_EMAIL': 'aryan@example.com',
+			'ADMIN_PASSWORD': 'Another-strong-password-1948!',
+		}):
+			call_command('bootstrap_admin')
+
+		admin.refresh_from_db()
+		self.assertTrue(admin.check_password('Original-strong-password-8492!'))
+
+	def test_bootstrap_admin_refuses_to_promote_existing_regular_user(self):
+		User = get_user_model()
+		User.objects.create_user(
+			username='aryan',
+			email='aryan@example.com',
+			password='Regular-user-password-4829!',
+		)
+		with patch.dict(os.environ, {
+			'ADMIN_USERNAME': 'aryan',
+			'ADMIN_EMAIL': 'aryan@example.com',
+			'ADMIN_PASSWORD': 'Strong-unique-admin-password-8492!',
+		}):
+			with self.assertRaises(CommandError):
+				call_command('bootstrap_admin')
+
 	def test_signup_reports_duplicate_username(self):
 		User = get_user_model()
 		User.objects.create_user(

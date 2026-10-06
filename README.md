@@ -574,8 +574,10 @@ The app uses SQLite locally unless `DATABASE_URL` is set. Render web-service fil
 
 1. Create a PostgreSQL database in Render.
 2. In the web service's **Environment** settings, set `DATABASE_URL` to that database's **Internal Database URL**.
-3. Deploy the service. The existing `build.sh` runs database migrations during the build.
-4. Sign up again on the deployed site if your previous account was created in the service's temporary SQLite database. That old account is not automatically copied to PostgreSQL.
+3. In the web service's **Environment** settings, add `ADMIN_USERNAME=aryan`, `ADMIN_EMAIL` with your email address, and `ADMIN_PASSWORD` with a strong, unique password. Do not use `1234`.
+4. Deploy the service. The build runs migrations and creates the initial admin from these variables; it never resets an existing admin's password.
+5. After a successful deployment, remove `ADMIN_PASSWORD` from the service's environment variables. Visit `https://<your-site>/admin/` and sign in with the username and password you configured.
+6. Sign up again on the deployed site if your previous account was created in the service's temporary SQLite database. That old account is not automatically copied to PostgreSQL.
 
 Keep the PostgreSQL database (and its data) when redeploying the web service. Do not use the SQLite fallback for production.
 
