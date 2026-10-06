@@ -568,6 +568,19 @@ http://127.0.0.1:8000/
 
 ---
 
+# 🚀 Render Deployment
+
+The app uses SQLite locally unless `DATABASE_URL` is set. Render web-service filesystems are ephemeral, so SQLite user accounts can disappear after a restart or redeploy. Use a persistent Render PostgreSQL database in production:
+
+1. Create a PostgreSQL database in Render.
+2. In the web service's **Environment** settings, set `DATABASE_URL` to that database's **Internal Database URL**.
+3. Deploy the service. The existing `build.sh` runs database migrations during the build.
+4. Sign up again on the deployed site if your previous account was created in the service's temporary SQLite database. That old account is not automatically copied to PostgreSQL.
+
+Keep the PostgreSQL database (and its data) when redeploying the web service. Do not use the SQLite fallback for production.
+
+---
+
 # 🔑 Gemini Configuration
 
 The project uses the **Google Gen AI SDK** to communicate with Gemini.
