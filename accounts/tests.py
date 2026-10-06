@@ -38,6 +38,25 @@ class AccountFlowTests(TestCase):
 		admin.refresh_from_db()
 		self.assertTrue(admin.check_password('Original-strong-password-8492!'))
 
+	def test_bootstrap_admin_resets_existing_superuser_only_when_requested(self):
+		User = get_user_model()
+		admin = User.objects.create_superuser(
+			username='aryan',
+			email='aryan@example.com',
+			password='Original-strong-password-8492!',
+		)
+		new_password = 'Replacement-strong-password-3847!'
+		with patch.dict(os.environ, {
+			'ADMIN_USERNAME': 'aryan',
+			'ADMIN_EMAIL': 'aryan@example.com',
+			'ADMIN_PASSWORD': new_password,
+			'ADMIN_RESET_PASSWORD': 'true',
+		}):
+			call_command('bootstrap_admin')
+
+		admin.refresh_from_db()
+		self.assertTrue(admin.check_password(new_password))
+
 	def test_bootstrap_admin_refuses_to_promote_existing_regular_user(self):
 		User = get_user_model()
 		User.objects.create_user(

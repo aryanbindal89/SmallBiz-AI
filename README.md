@@ -579,6 +579,8 @@ The app uses SQLite locally unless `DATABASE_URL` is set. Render web-service fil
 5. After a successful deployment, remove `ADMIN_PASSWORD` from the service's environment variables. Visit `https://<your-site>/admin/` and sign in with the username and password you configured.
 6. Sign up again on the deployed site if your previous account was created in the service's temporary SQLite database. That old account is not automatically copied to PostgreSQL.
 
+If the `aryan` admin already exists but its password is not accepted, set `ADMIN_USERNAME=aryan`, `ADMIN_EMAIL`, and a new strong `ADMIN_PASSWORD`, then set `ADMIN_RESET_PASSWORD=true` and redeploy. After the build succeeds, remove `ADMIN_PASSWORD` and `ADMIN_RESET_PASSWORD`.
+
 Keep the PostgreSQL database (and its data) when redeploying the web service. Do not use the SQLite fallback for production.
 
 ---

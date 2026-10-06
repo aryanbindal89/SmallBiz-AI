@@ -19,23 +19,30 @@ class Command(BaseCommand):
             )
 
         User = get_user_model()
+        candidate = User(username=username, email=email)
+        try:
+            password_validation.validate_password(password, user=candidate)
+        except ValidationError as exc:
+            raise CommandError(f'ADMIN_PASSWORD is not valid: {exc}') from exc
+
         existing_user = User._default_manager.filter(
             username__iexact=username
         ).first()
         if existing_user:
             if existing_user.is_staff and existing_user.is_superuser:
+                if os.environ.get('ADMIN_RESET_PASSWORD', '').lower() == 'true':
+                    existing_user.set_password(password)
+                    existing_user.save(update_fields=['password'])
+                    self.stdout.write(
+                        self.style.SUCCESS(f'Reset password for admin "{username}".')
+                    )
+                    return
                 self.stdout.write('Admin account already exists; no changes made.')
                 return
             raise CommandError(
                 f'Username "{username}" already belongs to a non-admin account. '
                 'Choose a different ADMIN_USERNAME.'
             )
-
-        candidate = User(username=username, email=email)
-        try:
-            password_validation.validate_password(password, user=candidate)
-        except ValidationError as exc:
-            raise CommandError(f'ADMIN_PASSWORD is not valid: {exc}') from exc
 
         User._default_manager.create_superuser(
             username=username,
