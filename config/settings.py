@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 import os
 from pathlib import Path
 
+from django.core.exceptions import ImproperlyConfigured
 import dj_database_url
 from dotenv import load_dotenv
 
@@ -70,6 +71,11 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
+
+if os.environ.get('RENDER') == 'true' and not os.environ.get('DATABASE_URL'):
+    raise ImproperlyConfigured(
+        'Set DATABASE_URL to a persistent Render PostgreSQL database.'
+    )
 
 DATABASES = {
     'default': dj_database_url.config(
